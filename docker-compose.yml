@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  udp_server:
+    build: .
+    container_name: udp_server
+    ports:
+      - "4210:4210/udp"
+    env_file:
+      - .env
+    restart: always
