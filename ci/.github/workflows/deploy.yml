@@ -1,0 +1,23 @@
+name: Deploy Application
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: docker build -t udp-server .
+
+      - name: Deploy via Docker Compose
+        run: docker-compose up --build -d
+
+      - name: Notify Deployment
+        run: echo "Deployment completed successfully."
