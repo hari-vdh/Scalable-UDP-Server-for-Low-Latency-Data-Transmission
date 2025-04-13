@@ -4,7 +4,6 @@ sensor_reader.py
 Module to interface with the DHT sensor and read humidity and temperature.
 This module includes both real sensor reading (using Adafruit_DHT) and a simulation mode.
 Extra logging, extended exception handling, and self-check routines have been added.
-The file has been extended to ensure professional code formatting with a minimum of 200 lines.
 """
 
 import Adafruit_DHT
