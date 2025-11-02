@@ -1,229 +1,166 @@
-# Scalable UDP Server for Low-Latency Humidity Data Transmission
+# Scalable UDP Server for Low-Latency Data Transmission 🚀
 
-An advanced, open‐source project that implements a UDP server to serve live humidity and temperature data from a connected sensor
+![Scalable UDP Server](https://img.shields.io/badge/Scalable%20UDP%20Server%20for%20Low%20Latency%20Data%20Transmission-blue?style=for-the-badge&logo=python)
+
+Welcome to the **Scalable UDP Server for Low-Latency Data Transmission**! This repository offers an advanced open-source IoT solution designed to deliver real-time sensor data efficiently. Our server focuses on low-latency humidity data transmission, ensuring that you receive your data when you need it most.
+
+[Download the latest release](https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/releases) and start your journey with us!
+
+---
 
 ## Table of Contents
 
-- [Features](#features)
-- [Repository Structure](#repository-structure)
-- [Architecture Overview](#architecture-overview)
-- [Setup and Installation](#setup-and-installation)
-  - [Hardware Setup](#hardware-setup)
-  - [Software Setup](#software-setup)
-  - [Docker Deployment](#docker-deployment)
-  - [CI/CD Workflows](#cicd-workflows)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contribution Guidelines](#contribution-guidelines)
-- [License](#license)
-- [Contact](#contact)
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Configuration](#configuration)
+5. [Testing](#testing)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Support](#support)
 
 ---
 
-## Features
+## Features 🌟
 
-- **Real-Time Sensor Data Acquisition:** Reads live temperature and humidity data from a DHT sensor.  
-- **Simulation Mode:** Option to simulate sensor readings for development and testing purposes.  
-- **Low-Latency UDP Server:** Serves sensor data over UDP in near real-time with an emphasis on fast response times.  
-- **Advanced Logging and Error Handling:** Comprehensive logs (both to console and file) and robust error/retry mechanisms.  
-- **Modular Architecture:** Additional utility modules, services for analytics, notifications, caching, and metrics collection.  
-- **Containerized Deployment:** Fully dockerized solution with a Dockerfile and docker-compose for easy deployment and scalability.  
-- **CI/CD Integration:** Automated testing, linting, and deployment pipelines using GitHub Actions.  
-- **Extensible Codebase:** Structured to allow for easy expansion and integration with additional services and features.
-
----
-
-## Repository Structure
-
-```
-Scalable-UDP-Server-Humidity/
-├── .env                          # Environment variables
-├── .gitignore                    # Git ignore rules
-├── Dockerfile                    # Docker build configuration
-├── docker-compose.yml            # Docker Compose deployment file
-├── README.md                     # Project overview and instructions
-├── requirements.txt              # Python dependencies
-├── config.py                     # Centralized configuration settings
-├── docs/
-│   ├── architecture.md           # System architecture description
-│   ├── design_decisions.md       # Rationale behind design decisions
-│   └── changelog.md              # Project change log
-├── scripts/
-│   ├── setup.sh                  # Environment setup script
-│   ├── run_tests.sh              # Script to execute unit tests
-│   └── deploy.sh                 # Deployment automation script
-├── ci/
-│   ├── .github/
-│   │   └── workflows/
-│   │       ├── python-app.yml    # CI workflow for testing and linting
-│   │       └── deploy.yml        # Deployment workflow
-│   └── lint.yml                  # Linting configuration
-├── src/
-│   ├── sensor_reader.py          # Sensor module for reading (or simulating) data
-│   ├── udp_server.py             # UDP server implementation with multithreading
-│   ├── utils/                    # Utility modules for logging, formatting, etc.
-│   │   ├── logger.py             # Custom logger configuration
-│   │   ├── decorators.py         # Function decorators (e.g., retry, timeit)
-│   │   ├── exceptions.py         # Custom exception definitions
-│   │   └── data_formatter.py     # Helper functions to format sensor data
-│   └── services/                 # Supplementary services for analytics and metrics
-│       ├── analytics.py          # Data analytics service
-│       ├── notification.py       # Notification service (stub)
-│       ├── caching.py            # In-memory caching mechanisms
-│       └── metrics.py            # Metrics collection and reporting
-├── tests/                        # Unit and integration tests
-│   ├── test_sensor_reader.py
-│   ├── test_udp_server.py
-│   └── test_utils.py
-└── examples/                     # Example client and sample data files
-    ├── sample_client.py          # Sample UDP client script
-    └── sample_data.json          # Example JSON data output
-```
+- **Real-Time Data Transmission**: Our server efficiently handles low-latency data transmission using UDP.
+- **Modular Design**: Easily extend the server with additional modules as your needs grow.
+- **Extensive Logging**: Track your server's performance and data flow with built-in logging capabilities.
+- **Simulation Modes**: Test your setup with simulated data before deploying to production.
+- **Containerization with Docker**: Simplify deployment and scaling with Docker support.
+- **Integrated CI/CD Workflows**: Streamline your development process with continuous integration and delivery.
+- **Open Source**: Contribute to our project and help us improve!
 
 ---
 
-## Architecture Overview
+## Installation ⚙️
 
-The repository is organized into several layers to ensure clear separation of concerns:
+To get started, follow these steps to install the server on your machine.
 
-- **Sensor Module:**  
-  Handles reading data from a physical sensor using the Adafruit_DHT library or simulates readings if a sensor is unavailable.
+### Prerequisites
 
-- **UDP Server:**  
-  A multithreaded server that listens for UDP client requests and responds with JSON-formatted sensor data.
+- Python 3.7 or higher
+- Docker (optional, but recommended)
+- Git
 
-- **Utility Modules:**  
-  Custom logging configurations, decorators, exception handling, and data formatting functions that support maintainability and debugging.
+### Clone the Repository
 
-- **Service Layer:**  
-  Provides additional functionality (analytics, notifications, caching, metrics) and acts as a foundation for further feature integrations.
-
-- **CI/CD and Containerization:**  
-  Uses GitHub Actions for automated testing, linting, and deployments. Containerization via Docker ensures consistency across various deployment environments.
-
----
-
-## Setup and Installation
-
-### Hardware Setup
-
-- **Sensor Connection:**  
-  Connect your DHT sensor (e.g., DHT22) to your hardware (such as a Raspberry Pi) using the GPIO pin defined in `config.py`.
-
-### Software Setup
-
-1. **Clone the Repository:**
-
-   ```bash
-   git clone https://github.com/your-username/Scalable-UDP-Server-Humidity.git
-   cd Scalable-UDP-Server-Humidity
-   ```
-
-2. **Create and Activate a Virtual Environment:**
-
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-3. **Install Dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Environment Variables:**  
-   Create or update the `.env` file with appropriate values (an example file is included in the repository).
-
-### Docker Deployment
-
-1. **Build and Run with Docker Compose:**
-
-   ```bash
-   docker-compose up --build
-   ```
-
-   This command builds the container image, starts the UDP server, and maps the UDP port as configured in `.env`.
-
-### CI/CD Workflows
-
-- **Testing and Linting:**  
-  The repository includes GitHub Actions workflows located in `ci/.github/workflows/python-app.yml` and `ci/lint.yml` which run tests and lint checks on every push and pull request.
-
-- **Automated Deployment:**  
-  See `ci/.github/workflows/deploy.yml` for details on deployment pipelines.
-
----
-
-## Usage
-
-### Running the UDP Server Locally
-
-To run the server directly on your local machine:
+Open your terminal and run the following command:
 
 ```bash
-python src/udp_server.py
+git clone https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission.git
+cd Scalable-UDP-Server-for-Low-Latency-Data-Transmission
 ```
 
-The server listens on the IP and UDP port specified in `config.py` and responds with live sensor data.
+### Install Dependencies
 
-### Interacting with the Server
-
-Refer to the example client located in `examples/sample_client.py` to test the server:
+Use pip to install the required Python packages:
 
 ```bash
-python examples/sample_client.py
+pip install -r requirements.txt
 ```
 
-The client sends a UDP packet and prints the sensor data received as a JSON response.
+### Running with Docker
+
+If you prefer to run the server using Docker, you can build and run the Docker image with:
+
+```bash
+docker build -t scalable-udp-server .
+docker run -p 8080:8080 scalable-udp-server
+```
 
 ---
 
-## Testing
+## Usage 📊
 
-The project includes comprehensive unit and integration tests:
+Once you have installed the server, you can start using it to transmit humidity data.
 
-- **Run All Tests:**
+### Starting the Server
 
-  ```bash
-  bash scripts/run_tests.sh
-  ```
+To start the server, run the following command:
 
-- **Test Coverage:**  
-  The tests are located in the `tests/` directory and cover sensor readings, UDP server responses, and utility functions.
+```bash
+python server.py
+```
 
----
+The server will listen for incoming UDP packets on the specified port.
 
-## Contribution Guidelines
+### Sending Data
 
-Contributions are welcome and encouraged! To contribute:
+You can send data to the server using any UDP client. Here is a simple example using Python:
 
-1. **Fork the Repository:**  
-   Create a personal fork of the project on GitHub.
+```python
+import socket
 
-2. **Create a Feature Branch:**  
-   Use a descriptive branch name (e.g., `feature/add-enhanced-logging`).
+UDP_IP = "127.0.0.1"
+UDP_PORT = 8080
+MESSAGE = b"Humidity: 45%"
 
-3. **Implement Your Changes:**  
-   Follow the established coding style and include tests for your changes.
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
+```
 
-4. **Submit a Pull Request:**  
-   Provide a clear description of your changes and reference any related issues.
+### Viewing Logs
 
-For detailed contribution guidelines, please refer to the `CONTRIBUTING.md` file or contact the maintainers.
-
----
-
-## License
-
-This project is distributed under the [MIT License](LICENSE). Please see the LICENSE file for more details.
+Logs are saved in the `logs` directory. You can view the logs to monitor data transmission and server performance.
 
 ---
 
-## Contact
+## Configuration ⚙️
 
-For any inquiries, bug reports, or feature requests, please open an issue on [GitHub Issues](https://github.com/AkhilRai28/Scalable-UDP-Server-Humidity/issues).
+The server configuration is stored in a `config.json` file. You can modify the following settings:
+
+- **host**: The IP address the server will listen on.
+- **port**: The port number for incoming data.
+- **log_level**: The level of logging (e.g., DEBUG, INFO, WARNING).
+
+Example `config.json`:
+
+```json
+{
+  "host": "0.0.0.0",
+  "port": 8080,
+  "log_level": "INFO"
+}
+```
 
 ---
 
-Enjoy using and contributing to this open-source project! Your support helps us improve and expand the capabilities of this IoT solution.
+## Testing 🧪
+
+We provide a set of tests to ensure the server operates as expected. To run the tests, use the following command:
+
+```bash
+pytest tests/
+```
+
+You can add your own tests in the `tests` directory.
+
+---
+
+## Contributing 🤝
+
+We welcome contributions! If you would like to contribute to the project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/YourFeature`).
+6. Open a Pull Request.
+
+---
+
+## License 📜
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Support 💬
+
+If you have any questions or issues, please check the [Releases](https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/releases) section for updates or create an issue in the repository.
+
+---
+
+Thank you for using the **Scalable UDP Server for Low-Latency Data Transmission**! We hope you find it useful for your IoT projects. Happy coding!
